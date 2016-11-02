@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ybe-ny-3aM" id="vqT-ds-pTr">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLb-R4-kp1">
@@ -41,6 +41,7 @@
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fFN-1Z-HTo" secondAttribute="bottom" constant="8" id="sAV-rf-NK7"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
             <connections>
                 <outlet property="textLabelOne" destination="WLb-R4-kp1" id="WwY-1B-6Ln"/>
                 <outlet property="textLabelTwo" destination="fFN-1Z-HTo" id="7De-Kt-swG"/>
