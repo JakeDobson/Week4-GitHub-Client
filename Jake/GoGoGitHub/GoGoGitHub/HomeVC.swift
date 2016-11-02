@@ -10,6 +10,8 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    let customTransition = CustomTransition()
+    
     var allRepositories = [String]()
     
     @IBOutlet weak var repoSearchBar: UISearchBar!
@@ -18,9 +20,14 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.repoTableView.delegate = self
         self.repoTableView.dataSource = self
+        self.repoTableView.delegate = self
         self.repoSearchBar.delegate = self
+        
+        self.repoTableView.estimatedRowHeight = 100
+        self.repoTableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.repoTableView.register(UINib(nibName: "RepoDetailCell", bundle: nil), forCellReuseIdentifier: RepoTableViewCell.id)
         
         update()
     }
@@ -34,9 +41,22 @@ class HomeVC: UIViewController {
             self.repoTableView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == RepoDetailVC.id {
+            if let destinationController = segue.destination as? RepoDetailVC {
+                if let index = repoTableView.indexPathForSelectedRow {
+                    destinationController.repo = GitHubService.shared.allRepos[index.row]
+                    destinationController.transitioningDelegate = self
+                }
+            }
+        }
+    }
 }
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -49,8 +69,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegat
         } else {
             currentRepository = GitHubService.shared.filteredRepos[indexPath.row]
         }
-        cell?.textLabel?.text = currentRepository.name
-        cell?.detailTextLabel?.text = currentRepository.description
+         cell?.textLabelOne?.text = currentRepository.name
+         cell?.textLabelTwo?.text = currentRepository.description
     
         return cell!
     }
@@ -63,9 +83,22 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegat
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: RepoDetailVC.id, sender: nil)
+    }
+}
+
+extension HomeVC: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let filteredRepos = GitHubService.shared.allRepos.filter({$0.name.contains(searchText)})
         GitHubService.shared.filteredRepos = filteredRepos
         self.repoTableView.reloadData()
+    }
+}
+
+extension HomeVC: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self.customTransition
     }
 }
