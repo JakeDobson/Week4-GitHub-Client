@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UBx-OJ-e87">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--AuthVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoGoGitHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthVC" id="BYZ-38-t0r" customClass="AuthVC" customModule="GoGoGitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,29 +21,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQ9-u1-1X1">
-                                <rect key="frame" x="16" y="356.5" width="343" height="30.5"/>
-                                <state key="normal" title="Print Token"/>
-                                <connections>
-                                    <action selector="printTokenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3QR-WQ-Fyd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3k-rM-Kqa">
-                                <rect key="frame" x="136.5" y="314" width="102" height="30"/>
-                                <state key="normal" title="Request Token"/>
+                                <rect key="frame" x="16" y="373" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.41836199660000001" green="0.07804635067" blue="0.61309773489999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="requestTokenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rfb-lD-w17"/>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0VS-za-MQQ"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github-logo" translatesAutoresizingMaskIntoConstraints="NO" id="OEW-pn-Cgn">
+                                <rect key="frame" x="77" y="28" width="200" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Dar-XC-4Kz"/>
+                                    <constraint firstAttribute="width" constant="200" id="oZX-XM-IDE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="TQ9-u1-1X1" secondAttribute="trailing" constant="16" id="F2v-xf-IBk"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TQ9-u1-1X1" secondAttribute="bottom" constant="280" id="HRN-2P-blK"/>
-                            <constraint firstItem="r3k-rM-Kqa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QdF-02-LuL"/>
-                            <constraint firstItem="TQ9-u1-1X1" firstAttribute="top" secondItem="r3k-rM-Kqa" secondAttribute="bottom" constant="12.5" id="fLg-8V-4RH"/>
-                            <constraint firstItem="TQ9-u1-1X1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="o3K-i0-nTE"/>
-                            <constraint firstItem="r3k-rM-Kqa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-4.5" id="z9S-Vp-hLz"/>
+                            <constraint firstItem="r3k-rM-Kqa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="54.5" id="0bc-uY-hda"/>
+                            <constraint firstItem="OEW-pn-Cgn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="GMh-uf-vId"/>
+                            <constraint firstItem="r3k-rM-Kqa" firstAttribute="top" secondItem="OEW-pn-Cgn" secondAttribute="bottom" constant="217" id="JBc-t3-ET0"/>
+                            <constraint firstItem="r3k-rM-Kqa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KvD-M6-MiF"/>
+                            <constraint firstAttribute="trailing" secondItem="r3k-rM-Kqa" secondAttribute="trailing" constant="16" id="MQ9-oj-wB4"/>
+                            <constraint firstItem="OEW-pn-Cgn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-10.5" id="eiO-XN-SVf"/>
+                            <constraint firstItem="r3k-rM-Kqa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="fwd-bq-0RZ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -51,5 +56,77 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
+        <!--HomeVC-->
+        <scene sceneID="73U-DW-NuL">
+            <objects>
+                <viewController id="UBx-OJ-e87" customClass="HomeVC" customModule="GoGoGitHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tXo-Nq-Nlh"/>
+                        <viewControllerLayoutGuide type="bottom" id="pL1-UR-o7l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bc9-MJ-61Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="CZ6-ns-ida">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ea-Po-12T">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoTableViewCell" textLabel="kSH-MG-jhg" detailTextLabel="gqc-fp-rx9" style="IBUITableViewCellStyleSubtitle" id="3fa-bt-MCZ" customClass="RepoTableViewCell" customModule="GoGoGitHub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3fa-bt-MCZ" id="mQC-X3-yEZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kSH-MG-jhg">
+                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gqc-fp-rx9">
+                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CZ6-ns-ida" firstAttribute="leading" secondItem="Bc9-MJ-61Z" secondAttribute="leading" id="CVH-Qe-weg"/>
+                            <constraint firstItem="6Ea-Po-12T" firstAttribute="leading" secondItem="Bc9-MJ-61Z" secondAttribute="leading" id="EgM-bT-H1u"/>
+                            <constraint firstItem="pL1-UR-o7l" firstAttribute="top" secondItem="6Ea-Po-12T" secondAttribute="bottom" id="cL8-r9-WhW"/>
+                            <constraint firstAttribute="trailing" secondItem="CZ6-ns-ida" secondAttribute="trailing" id="hG3-QX-9FS"/>
+                            <constraint firstItem="CZ6-ns-ida" firstAttribute="top" secondItem="tXo-Nq-Nlh" secondAttribute="bottom" id="kZz-VZ-PUo"/>
+                            <constraint firstItem="6Ea-Po-12T" firstAttribute="top" secondItem="CZ6-ns-ida" secondAttribute="bottom" id="mf0-6a-uni"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ea-Po-12T" secondAttribute="trailing" id="sYz-HX-dZ7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="repoSearchBar" destination="CZ6-ns-ida" id="Csa-h2-8kc"/>
+                        <outlet property="repoTableView" destination="6Ea-Po-12T" id="Vg1-Wq-eaM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIb-7N-3E4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="139"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="github-logo" width="1500" height="1125"/>
+    </resources>
 </document>

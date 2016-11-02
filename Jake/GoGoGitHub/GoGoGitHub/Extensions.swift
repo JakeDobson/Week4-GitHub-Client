@@ -6,10 +6,18 @@
 //  Copyright © 2016 Jacob Dobson. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 let userDefaultAccessTokenKey = "access_token"
+
+//everything you need for identifier EX: --> "tweetCell.id"
+extension UIResponder {
+    static var id: String {
+        return String(describing: self)
+    }
+}
+
 
 extension UserDefaults {
     
