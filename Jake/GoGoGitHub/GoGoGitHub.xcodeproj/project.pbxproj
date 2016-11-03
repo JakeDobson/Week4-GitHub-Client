@@ -14,6 +14,9 @@
 		7C9FDE171DC7AE6C00ED120E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9FDE151DC7AE6C00ED120E /* LaunchScreen.storyboard */; };
 		7C9FDE1F1DC7C22E00ED120E /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FDE1E1DC7C22E00ED120E /* GitHubService.swift */; };
 		7C9FDE221DC7C45600ED120E /* CredentialsGitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FDE211DC7C45600ED120E /* CredentialsGitHub.swift */; };
+		7CA67C801DCBA27A00E3C53A /* UserSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA67C7F1DCBA27A00E3C53A /* UserSearchVC.swift */; };
+		7CA67C821DCBA50800E3C53A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA67C811DCBA50800E3C53A /* User.swift */; };
+		7CA67C841DCBB79400E3C53A /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA67C831DCBB79400E3C53A /* WebVC.swift */; };
 		7CAC01431DC8F9ED0032B917 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC01421DC8F9ED0032B917 /* HomeVC.swift */; };
 		7CAC01451DC8FAE20032B917 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC01441DC8FAE10032B917 /* AuthVC.swift */; };
 		7CAC01471DC91AC30032B917 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC01461DC91AC30032B917 /* Repository.swift */; };
@@ -33,6 +36,9 @@
 		7C9FDE181DC7AE6C00ED120E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C9FDE1E1DC7C22E00ED120E /* GitHubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
 		7C9FDE211DC7C45600ED120E /* CredentialsGitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsGitHub.swift; sourceTree = "<group>"; };
+		7CA67C7F1DCBA27A00E3C53A /* UserSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchVC.swift; sourceTree = "<group>"; };
+		7CA67C811DCBA50800E3C53A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7CA67C831DCBB79400E3C53A /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		7CAC01421DC8F9ED0032B917 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		7CAC01441DC8FAE10032B917 /* AuthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		7CAC01461DC91AC30032B917 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 		7C9FDE201DC7C23E00ED120E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7CA67C811DCBA50800E3C53A /* User.swift */,
 				7C9FDE211DC7C45600ED120E /* CredentialsGitHub.swift */,
 				7C152E3D1DC809A1004EDA32 /* Extensions.swift */,
 				7C9FDE1E1DC7C22E00ED120E /* GitHubService.swift */,
@@ -94,6 +101,8 @@
 		7C9FDE231DC7C7DE00ED120E /* Controlla */ = {
 			isa = PBXGroup;
 			children = (
+				7CA67C831DCBB79400E3C53A /* WebVC.swift */,
+				7CA67C7F1DCBA27A00E3C53A /* UserSearchVC.swift */,
 				7CAC01681DCA6AB20032B917 /* RepoDetailVC.swift */,
 				7CAC01441DC8FAE10032B917 /* AuthVC.swift */,
 				7CAC01421DC8F9ED0032B917 /* HomeVC.swift */,
@@ -199,11 +208,14 @@
 			files = (
 				7CAC01471DC91AC30032B917 /* Repository.swift in Sources */,
 				7C152E3E1DC809A1004EDA32 /* Extensions.swift in Sources */,
+				7CA67C801DCBA27A00E3C53A /* UserSearchVC.swift in Sources */,
 				7C9FDE1F1DC7C22E00ED120E /* GitHubService.swift in Sources */,
 				7CAC01491DC93B010032B917 /* RepoTableViewCell.swift in Sources */,
 				7CAC01431DC8F9ED0032B917 /* HomeVC.swift in Sources */,
+				7CA67C841DCBB79400E3C53A /* WebVC.swift in Sources */,
 				7CAC01451DC8FAE20032B917 /* AuthVC.swift in Sources */,
 				7C9FDE0D1DC7AE6C00ED120E /* AppDelegate.swift in Sources */,
+				7CA67C821DCBA50800E3C53A /* User.swift in Sources */,
 				7CAC016B1DCA6DBF0032B917 /* CustomTransition.swift in Sources */,
 				7C9FDE221DC7C45600ED120E /* CredentialsGitHub.swift in Sources */,
 				7CAC01691DCA6AB20032B917 /* RepoDetailVC.swift in Sources */,

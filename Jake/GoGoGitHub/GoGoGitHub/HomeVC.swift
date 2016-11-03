@@ -91,9 +91,14 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 extension HomeVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let filteredRepos = GitHubService.shared.allRepos.filter({$0.name.contains(searchText)})
-        GitHubService.shared.filteredRepos = filteredRepos
-        self.repoTableView.reloadData()
+        let text = searchText.lowercased()
+        if text != "" {
+            let filteredRepos = GitHubService.shared.allRepos.filter({$0.name.lowercased().contains(text)})
+            GitHubService.shared.filteredRepos = filteredRepos
+        } else {
+            self.repoTableView.reloadData()
+            searchBar.resignFirstResponder()
+        }
     }
 }
 

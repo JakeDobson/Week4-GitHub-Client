@@ -11,6 +11,30 @@ import UIKit
 
 let userDefaultAccessTokenKey = "access_token"
 
+
+extension String {
+    
+    var isValid: Bool {
+        let regexPattern = "[^0-9a-z]"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regexPattern, options: .caseInsensitive)
+            
+            let range = NSRange(location: 0, length: self.characters.count)
+            
+            let matches = regex.numberOfMatches(in: self, options: .reportCompletion, range: range)
+            
+            if matches > 0 {
+                return false
+            }
+        } catch {
+            return false
+        }
+        return true
+    }
+}
+
+
 //everything you need for identifier EX: --> "tweetCell.id"
 extension UIResponder {
     static var id: String {
